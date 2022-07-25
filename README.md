@@ -19,4 +19,4 @@ Based on your internet and computer speed, you may have to change the delay comm
   
 This script is configured with english google drive in mind. In case your local languages context menu to make the file available does not start with the text `Offline` you have to edit `keystroke "Offline"` in this script to your localization.  
   
-Depending on the amount of subdirectories in your gocryptfs folder, the Automator will abort the script before it finishes. Just restart the script as it will continue where it has been interrupted.
+Depending on the amount of subdirectories in your gocryptfs folder, the Automator will abort the script before it finishes. Just restart the script as it will continue where it has been interrupted. Be aware that Automator displays "run successful" when it stops the script.
