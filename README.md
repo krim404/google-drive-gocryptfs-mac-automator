@@ -1,6 +1,10 @@
 # google-drive + gocryptfs + mac-automator
 This workflow is for improving stability of a gocryptfs mount stored on a google drive (file-stream) on a mac.  
   
+__Requirements__:  
+* [GocryptFS with FUSE](https://github.com/rfjakob/gocryptfs)
+* [Google Drive](https://dl.google.com/drive-file-stream/GoogleDrive.dmg)
+  
 ## What is this workflow doing?
 It will search for all `gocryptfs.diriv` files in the selected target and will set them to "make available offline" using the finder menu.  
   
