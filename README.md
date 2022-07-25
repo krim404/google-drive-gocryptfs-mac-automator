@@ -1,6 +1,10 @@
 # google-drive + gocryptfs + mac-automator
 This workflow is for improving stability of a gocryptfs mount stored on a google drive (file-stream) on a mac.  
   
+__Requirements__:  
+* [GocryptFS with FUSE](https://github.com/rfjakob/gocryptfs)
+* [Google Drive](https://dl.google.com/drive-file-stream/GoogleDrive.dmg)
+  
 ## What is this workflow doing?
 It will search for all `gocryptfs.diriv` files in the selected target and will set them to "make available offline" using the finder menu.  
   
@@ -10,6 +14,9 @@ Especially when doing big directory operations (like scanning all folders for a 
 ## How does it work?
 As Google Drive does not offer a command line tool to set a file to "available offline" and needs to be set using the mac gui - this tool will have to walk through all sub-directorys and take over the Finder by selecting the diriv file, issuing a context menu command and press a few buttons to select "available offline". It will also create a file in `~/scripts` called `gc.done` used as a cache file to remember, which files are already set - this prevents a second run to start from scratch. 
 
-## Optimization
-Based on your internet and computer speed, you may have to change the delay commands.
-
+## Optimization / Customization / Readme
+Based on your internet and computer speed, you may have to change the delay commands.  
+  
+This script is configured with english google drive in mind. In case your local languages context menu to make the file available does not start with the text `Offline` you have to edit `keystroke "Offline"` in this script to your localization.  
+  
+Depending on the amount of subdirectories in your gocryptfs folder, the Automator will abort the script before it finishes. Just restart the script as it will continue where it has been interrupted. Be aware that Automator displays "run successful" when it stops the script.
